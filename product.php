@@ -43,25 +43,25 @@ $category = (new Category())->find($product["category_id"]);
         <div class="row  d-flex justify-content-center">
             <div class="card" style="width: 20rem;">
                 <div class="card-header bg-light d-flex justify-content-center">
-                    <img style="max-height:250px; max-width:250px;" src="./assets/images/<?php echo $product['image'] ?>" class="" alt="...">
+                    <img style="max-height:250px; max-width:250px;" src="./assets/images/<?php echo htmlspecialchars($product['image']) ?>" class="" alt="...">
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <strong>Name : </strong>
-                            <?php echo $product['name'] ?>
+                            <?php echo htmlspecialchars($product['name']) ?>
                         </li>
                         <li class="list-group-item">
                             <strong>Quantity : </strong>
-                            <?php echo $product['quantity'] ?>
+                            <?php echo htmlspecialchars($product['quantity']) ?>
                         </li>
                         <li class="list-group-item">
                             <strong>Description : </strong>
-                            <?php echo $product['description'] ?>
+                            <?php echo htmlspecialchars($product['description']) ?>
                         </li>
                         <li class="list-group-item">
                             <strong>Category : </strong>
-                            <?php echo $category['name'] ?>
+                            <?php echo htmlspecialchars($category['name']) ?>
                         </li>
                     </ul>
                 </div>

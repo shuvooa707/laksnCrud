@@ -79,22 +79,22 @@ $categories->gchildrens();
                     <tbody>
                         <?php
                         foreach ($products as $i => $product) {
-                            echo "<tr data-id='" . $product['description'] . "'>
+                            echo "<tr data-id='" . htmlspecialchars($product['description']) . "'>
                                     <td>" . $i . "</td>
                                     <td>
-                                        <a href='/product.php?id=" . $product['id'] . "'>
-                                        " . $product['name'] . "
+                                        <a href='/product.php?id=" . htmlspecialchars($product['id']) . "'>
+                                        " . htmlspecialchars($product['name']) . "
                                         </a>
                                     </td>
-                                    <td>" . $product['quantity'] . "</td>
-                                    <td>" . $product['description'] . "</td>
+                                    <td>" . htmlspecialchars($product['quantity']) . "</td>
+                                    <td>" . htmlspecialchars($product['description']) . "</td>
                                     <td>
-                                       <img width='100px' src='assets/images/" . $product['image'] . "'>
+                                       <img width='100px' src='assets/images/" . htmlspecialchars($product['image']) . "'>
                                     </td>
-                                    <td>" . $product['category'] . "</td>
+                                    <td>" . htmlspecialchars($product['category']) . "</td>
                                     <td>
-                                        <button class='btn btn-info py-0 px-2 text-light m-1' onclick='editProduct(this.parentElement.parentElement, " . $product['id'] . ",)'>Edit</button>
-                                        <button class='btn btn-danger py-0 px-2 text-light m-1' onclick='deleteProduct(this.parentElement.parentElement, " . $product['id'] . ")'>Delete</button>
+                                        <button class='btn btn-info py-0 px-2 text-light m-1' onclick='editProduct(this.parentElement.parentElement, " . htmlspecialchars($product['id']) . ",)'>Edit</button>
+                                        <button class='btn btn-danger py-0 px-2 text-light m-1' onclick='deleteProduct(this.parentElement.parentElement, " . htmlspecialchars($product['id']) . ")'>Delete</button>
                                     </td>
                                 </tr>";
                         }
@@ -146,7 +146,7 @@ $categories->gchildrens();
                                     <?php
                                     foreach ($categories->gchildrens() as $category) {
                                         echo "
-                                            <option value='" . $category['id'] . "'>" . $category['name'] . "</option>
+                                            <option value='" . htmlspecialchars($category['id']) . "'>" . htmlspecialchars($category['name']) . "</option>
                                             ";
                                     }
                                     ?>
@@ -205,7 +205,7 @@ $categories->gchildrens();
                                     <?php
                                     foreach ($categories->gchildrens() as $category) {
                                         echo "
-                                            <option value='" . $category['id'] . "'>" . $category['name'] . "</option>
+                                            <option value='" . htmlspecialchars($category['id']) . "'>" . htmlspecialchars($category['name']) . "</option>
                                             ";
                                     }
                                     ?>
